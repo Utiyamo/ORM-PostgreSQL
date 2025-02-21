@@ -12,13 +12,13 @@ Este pacote é um ORM (Object-Relational Mapping) para PostgreSQL escrito em Typ
 ## Instalação
 Para instalar o pacote, execute o seguinte comando:
 
-bash
+### bash
 	npm install orm-postgresql
 
 ## Configuração
 Antes de usar o pacote, configure as variáveis de ambiente para conexão com o banco de dados PostgreSQL. Crie um arquivo .env no diretório raiz do seu projeto com as seguintes variáveis:
 
-env
+### env
 	DB_HOST=localhost
 	DB_PORT=5432
 	DB_USER=your_username
@@ -29,7 +29,7 @@ env
 1. Definindo Modelos
 	Cada tabela no banco de dados deve ser representada por uma classe que estende a classe base Model. Por exemplo:
 
-typescript
+### typescript
 	import { Model } from 'orm-postgresql';
 
 	class User extends Model {
@@ -43,7 +43,7 @@ typescript
 2. Conexão com o Banco de Dados
 Conecte-se ao banco de dados antes de executar qualquer operação:
 
-typescript
+### typescript
 	import { Connection } from 'orm-postgresql';
 
 	(async () => {
@@ -56,7 +56,7 @@ typescript
 
 ## Operações CRUD
 ### Criar um Registro
-typescript
+#### typescript
 	const newUser = await User.create({
 		name: 'Alice',
 		email: 'alice@example.com',
@@ -65,13 +65,13 @@ typescript
 
 ### Buscar Registros
 Buscar Todos os Registros
-typescript
+#### typescript
 	const users = await User.findAll();
 	console.log(users);
 
 
 ### Buscar por ID
-typescript
+#### typescript
 	const user = await User.find(1);
 	console.log(user);
 
@@ -79,7 +79,7 @@ typescript
 #### Incluir Dados Relacionados (include)
 Use o método include para carregar dados relacionados. Por exemplo, para buscar usuários e seus posts relacionados:
 
-typescript
+##### typescript
 import { QueryBuilder } from 'orm-postgresql';
 
 	const queryBuilder = new QueryBuilder()
@@ -100,7 +100,7 @@ import { QueryBuilder } from 'orm-postgresql';
 O pacote inclui uma classe Linq para manipular dados em memória de forma semelhante ao LINQ da Microsoft.
 
 #### Filtrar Dados (where)
-typescript
+##### typescript
 	import { Linq } from 'orm-postgresql';
 
 	const users = [
@@ -116,14 +116,14 @@ typescript
 
 
 #### Ordenar Dados (orderBy)
-typescript 
+##### typescript 
 	const sortedUsers = new Linq(users)
 		.orderBy(user => user.name)
 		.toArray();
 	console.log(sortedUsers);
 
 #### Selecionar Propriedades Específicas (select)
-typescript
+##### typescript
 	const names = new Linq(users)
 		.select(user => user.name)
 		.toArray();
@@ -131,7 +131,7 @@ typescript
 	console.log(names);
 
 #### Combinar Dados de Dois Arrays (join)
-typescript
+##### typescript
 	const posts = [
    	  { userId: 1, title: 'Post 1' },
    	  { userId: 1, title: 'Post 2' },
