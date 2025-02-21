@@ -4,6 +4,9 @@
   "description": "Um ORM TypeScript para PostgreSQL com funcionalidades semelhantes ao Entity Framework e suporte a LINQ-like queries.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"                          
+  ],
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build"

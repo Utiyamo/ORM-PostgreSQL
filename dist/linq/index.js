@@ -43,3 +43,4 @@ class Linq {
     }
 }
 exports.Linq = Linq;
+//# sourceMappingURL=index.js.map

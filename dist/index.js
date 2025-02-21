@@ -13,3 +13,4 @@ Object.defineProperty(exports, "QueryBuilder", { enumerable: true, get: function
 // Exporta a classe Linq para manipulação de dados em memória
 var linq_1 = require("./linq");
 Object.defineProperty(exports, "Linq", { enumerable: true, get: function () { return linq_1.Linq; } });
+//# sourceMappingURL=index.js.map
