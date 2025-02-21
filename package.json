@@ -1,15 +1,30 @@
 {
-  "name": "orm-postegresql",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "orm-postgresql", 
+  "version": "1.0.0",       
+  "description": "Um ORM TypeScript para PostgreSQL com funcionalidades semelhantes ao Entity Framework e suporte a LINQ-like queries.",
+  "main": "dist/index.js",  
+  "types": "dist/index.d.ts", 
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",         
+    "prepare": "npm run build" 
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "keywords": [
+    "orm",
+    "postgresql",
+    "typescript",
+    "linq",
+    "entity-framework"
+  ],
+  "author": "dcutiyamo@gmail.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Utiyamo/ORM-PostgreSQL.git" 
+  },
+  "bugs": {
+    "url": "https://github.com/Utiyamo/ORM-PostgreSQL/issues"
+  },
+  "homepage": "https://github.com/Utiyamo/ORM-PostgreSQL#readme",
   "dependencies": {
     "pg": "^8.13.3",
     "reflect-metadata": "^0.2.2"
